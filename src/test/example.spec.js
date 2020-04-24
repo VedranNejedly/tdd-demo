@@ -2,36 +2,41 @@ var assert = require('assert');
 var chai = require("chai");
 var expect = chai.expect;
 var should = chai.should;
-const fizzBuzz = require("../fizzBuzz");
-/*
-FizzBuzz problem: 
-- za broj djeljiv sa 3 funkcija vraća "Fizz"
-- za broj djeljiv sa 5 funkcija vraća "Buzz"
-- Za broj djeljiv sa 3 i 5 funkcija vraća FizzBuzz
-- Za ostale brojeve vratiti undefined
-*/
-describe('fizz buz problem', function() {
-    it('fizzBuzz should be a function', function () {
-        fizzBuzz();
-    });
+const convertToRoman = require("../arabicToRoman");
 
-    it("za broj djeljiv sa 3 funkcija vraća Fizz", function() {
-        let result = fizzBuzz(3);
-        expect(result).to.eq("Fizz");
-    });
+//funkcija ne smije biti dulja od 5-6 redaka
 
-    it("za broj djeljiv sa 5 funkcija vraća Buzz", function() {
-       assert.equal(fizzBuzz(5), "Buzz"); 
+describe('arabicToRoman', function() {
+    it('arabicRoman_Number should be a function', function () {
+        convertToRoman();
     });
+    it('Broj 1 daje "I"', function () {
+        assert.strictEqual(convertToRoman(1), "I");
+    });
+    it('Broj 2 daje "II"', function () {
+        assert.strictEqual(convertToRoman(2), "II");
+    });
+    it('If number 3 convertToRoman should return III', function () {
+        assert.strictEqual(convertToRoman(3), "III")
+    })
+    it('If number 4 convertToRoman should return IV', function () {
+        assert.strictEqual(convertToRoman(4), "IV");
+    })
+    it('If number 5 convertToRoman should return V', function () {
+        assert.strictEqual(convertToRoman(5), "V");
+    })
+    it('If number 6 convertToRoman should return VI', function(){
+        assert.strictEqual(convertToRoman(6), "VI");
+    })
+    it('If number 9 convertToRoman should return IV', function(){
+        assert.strictEqual(convertToRoman(9), "IX");
+    })
+    
 
-    it("Za broj djeljiv sa 3 i 5 funkcija vraća FizzBuzz", function() {
-        expect(fizzBuzz(15)).to.eq("FizzBuzz");
-    });
+    
+    
 
-    it("Za ostale brojeve vratiti undefined", function() {
-        let result = fizzBuzz(4);
-        assert.strictEqual(result, undefined);
-    });
+  
 
 });
 

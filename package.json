@@ -4,7 +4,7 @@
   "description": "TDD demo scripts",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/**/**.spec.js"
+    "test": "mocha src/**/**.spec.js --watch"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "latest",
-    "mocha": "latest"
+    "mocha": "^7.1.1"
   }
 }
